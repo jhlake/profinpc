@@ -11,7 +11,7 @@ for i = 1:32
     end
 end
 % Recorrido para verificar si el c?digo ya existe. En el peor caso
-% complejidad Log(n).
+% complejidad Log(n). JAMES ESTO ES MENTIRA, ES O(N).
 repeated = 0;
 for j = 1:length(idlist)
     if(strcmp(id,idlist(j)))

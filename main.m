@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 22-May-2018 19:29:33
+% Last Modified by GUIDE v2.5 23-May-2018 10:08:52
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,26 +73,26 @@ function varargout = main_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in searchButton.
+function searchButton_Callback(hObject, eventdata, handles)
+% hObject    handle to searchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on selection change in listbox1.
-function listbox1_Callback(hObject, eventdata, handles)
-% hObject    handle to listbox1 (see GCBO)
+% --- Executes on selection change in patientsListbox.
+function patientsListbox_Callback(hObject, eventdata, handles)
+% hObject    handle to patientsListbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns listbox1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from listbox1
+% Hints: contents = cellstr(get(hObject,'String')) returns patientsListbox contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from patientsListbox
 
 
 % --- Executes during object creation, after setting all properties.
-function listbox1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to listbox1 (see GCBO)
+function patientsListbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to patientsListbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -103,26 +103,26 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton2.
-function pushbutton2_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton2 (see GCBO)
+% --- Executes on button press in solveODEButton.
+function solveODEButton_Callback(hObject, eventdata, handles)
+% hObject    handle to solveODEButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
 
-function edit2_Callback(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
+function nameTextbox_Callback(hObject, eventdata, handles)
+% hObject    handle to nameTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit2 as text
-%        str2double(get(hObject,'String')) returns contents of edit2 as a double
+% Hints: get(hObject,'String') returns contents of nameTextbox as text
+%        str2double(get(hObject,'String')) returns contents of nameTextbox as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
+function nameTextbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to nameTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -134,18 +134,18 @@ end
 
 
 
-function edit3_Callback(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
+function surnameTextbox_Callback(hObject, eventdata, handles)
+% hObject    handle to surnameTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit3 as text
-%        str2double(get(hObject,'String')) returns contents of edit3 as a double
+% Hints: get(hObject,'String') returns contents of surnameTextbox as text
+%        str2double(get(hObject,'String')) returns contents of surnameTextbox as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit3_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
+function surnameTextbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to surnameTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -157,18 +157,18 @@ end
 
 
 
-function edit6_Callback(hObject, eventdata, handles)
-% hObject    handle to edit6 (see GCBO)
+function languageTextbox_Callback(hObject, eventdata, handles)
+% hObject    handle to languageTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit6 as text
-%        str2double(get(hObject,'String')) returns contents of edit6 as a double
+% Hints: get(hObject,'String') returns contents of languageTextbox as text
+%        str2double(get(hObject,'String')) returns contents of languageTextbox as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit6_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit6 (see GCBO)
+function languageTextbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to languageTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -180,18 +180,18 @@ end
 
 
 
-function edit7_Callback(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function povertyTextbox_Callback(hObject, eventdata, handles)
+% hObject    handle to povertyTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit7 as text
-%        str2double(get(hObject,'String')) returns contents of edit7 as a double
+% Hints: get(hObject,'String') returns contents of povertyTextbox as text
+%        str2double(get(hObject,'String')) returns contents of povertyTextbox as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit7_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function povertyTextbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to povertyTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -202,23 +202,23 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton3.
-function pushbutton3_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
+% --- Executes on button press in detailsButton.
+function detailsButton_Callback(hObject, eventdata, handles)
+% hObject    handle to detailsButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton4.
-function pushbutton4_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton4 (see GCBO)
+% --- Executes on button press in resetSearchButton.
+function resetSearchButton_Callback(hObject, eventdata, handles)
+% hObject    handle to resetSearchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton5.
-function pushbutton5_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton5 (see GCBO)
+% --- Executes on button press in selectPhotoButton.
+function selectPhotoButton_Callback(hObject, eventdata, handles)
+% hObject    handle to selectPhotoButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -230,26 +230,26 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton7.
-function pushbutton7_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton7 (see GCBO)
+% --- Executes on button press in dateOfBirthButton.
+function dateOfBirthButton_Callback(hObject, eventdata, handles)
+% hObject    handle to dateOfBirthButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on selection change in popupmenu1.
-function popupmenu1_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
+% --- Executes on selection change in genderMenu.
+function genderMenu_Callback(hObject, eventdata, handles)
+% hObject    handle to genderMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu1
+% Hints: contents = cellstr(get(hObject,'String')) returns genderMenu contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from genderMenu
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
+function genderMenu_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to genderMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -260,19 +260,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in popupmenu2.
-function popupmenu2_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+% --- Executes on selection change in maritalSatusMenu.
+function maritalSatusMenu_Callback(hObject, eventdata, handles)
+% hObject    handle to maritalSatusMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu2
+% Hints: contents = cellstr(get(hObject,'String')) returns maritalSatusMenu contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from maritalSatusMenu
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+function maritalSatusMenu_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to maritalSatusMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
