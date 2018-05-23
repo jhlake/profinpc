@@ -7,7 +7,7 @@ function [ ACPT, ADCPT, LCPT, PCPT, POI ] = ReadDatabase( PDAdress )
 
 
 ACPT = readtable([PDAdress, '/AdmissionsCorePopulatedTable382.txt'],'Delimiter',' ');
-%hola pedro
+
 ADCPT = readtable([PDAdress, '/AdmissionsDiagnosesCorePopulatedTable382.txt'],'Delimiter',' ');
 
 LCPT = readtable([PDAdress, '/LabsCorePopulatedTable382.txt'],'Delimiter',' ');
