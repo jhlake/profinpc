@@ -3,8 +3,11 @@ function [ ACPT, ADCPT, LCPT, PCPT, POI ] = ReadDatabase( PDAdress )
 %las carga en memoria para ser usadas. Esto no tiene problema pues podemos
 %asumir que cabe en memoria. 
 
-ACPT = readtable([PDAdress, '/AdmissionsCorePopulatedTable382.txt'],'Delimiter',' ');
 
+
+
+ACPT = readtable([PDAdress, '/AdmissionsCorePopulatedTable382.txt'],'Delimiter',' ');
+%hola pedro
 ADCPT = readtable([PDAdress, '/AdmissionsDiagnosesCorePopulatedTable382.txt'],'Delimiter',' ');
 
 LCPT = readtable([PDAdress, '/LabsCorePopulatedTable382.txt'],'Delimiter',' ');
