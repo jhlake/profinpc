@@ -1,6 +1,8 @@
 
 %opts = detectImportOptions('Angel_Barreto_Miguel_Walter.txt');
 %opts.Delimiter = {'\t', '\t\t', ' '};
+
+
 cosas = readtable('Angel_Barreto_Miguel_Walter.txt');
 
 cositas = (1:numel(cosas.Var1))';
@@ -34,3 +36,8 @@ graficar_exams(cositas, exams, polis);
 %         
 % [TOUT, YOUT] = ode45(F, tspan, y0); 
 % plot(TOUT, YOUT);
+% datacursormode on
+
+
+
+
