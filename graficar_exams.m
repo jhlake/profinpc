@@ -30,7 +30,8 @@ subplot(1,4,4);
 plot(puntos_x, puntos_y{4},'*');hold on  % Grafica datos examenes temperatura.
 k_4 = polyval(polinomios{4}, xx); % Usa polinomio para generar datos aprox de temperatura.
 plot(xx, k_4);hold off % Grafica aproximaci?n examenes temperatura.
-datacursormode()
+
+datacursormode on;
 
 
 end
