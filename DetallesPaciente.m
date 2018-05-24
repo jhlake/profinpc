@@ -22,6 +22,7 @@ function varargout = DetallesPaciente(varargin)
 
 % Edit the above text to modify the response to help DetallesPaciente
 
+% Last Modified by GUIDE v2.5 24-May-2018 14:48:56
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -79,10 +80,16 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
+% --- Executes on button press in ButECG.
+function ButECG_Callback(hObject, eventdata, handles)
+% hObject    handle to ButECG (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
+% --- Executes on button press in ButLab.
+function ButLab_Callback(hObject, eventdata, handles)
+% hObject    handle to ButLab (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -186,12 +193,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on selection change in ChangeRace.
+function ChangeRace_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeRace (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: contents = cellstr(get(hObject,'String')) returns ChangeRace contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from ChangeRace
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangeRace_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangeRace (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -203,12 +217,18 @@ end
 
 
 
+function ChangeLanguage_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeLanguage (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: get(hObject,'String') returns contents of ChangeLanguage as text
+%        str2double(get(hObject,'String')) returns contents of ChangeLanguage as a double
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangeLanguage_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangeLanguage (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -220,12 +240,18 @@ end
 
 
 
+function ChangePoverty_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangePoverty (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: get(hObject,'String') returns contents of ChangePoverty as text
+%        str2double(get(hObject,'String')) returns contents of ChangePoverty as a double
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangePoverty_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangePoverty (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -236,6 +262,9 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on selection change in ChangeMarital.
+function ChangeMarital_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeMarital (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
