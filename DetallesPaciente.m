@@ -55,6 +55,10 @@ movegui('center')
 % Choose default command line output for DetallesPaciente
 handles.output = hObject;
 
+handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
+handles.pacienteid = datosf1.pacienteact{1,8};
+set(hObject,'HandleVisibility','on');
+
 % Update handles structure
 guidata(hObject, handles);
 
