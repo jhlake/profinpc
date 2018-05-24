@@ -25,13 +25,14 @@ if(strcmp(param, 'Name'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
+    if(length(lista) >8)
+        for j =2:8 
             % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
             % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 elseif(strcmp(param, 'Gender'))
@@ -44,13 +45,14 @@ elseif(strcmp(param, 'Gender'))
             lista{ind, 4} = core.PatientMaritalStatus{i};
             lista{ind, 5} = core.PatientLanguage{i};
             lista{ind, 6} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 7} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >6)
-        for j =2:6 
+    if(length(lista) >7)
+        for j =2:7
             % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
             % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 seis veces.
+            lista(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
 elseif(strcmp(param, 'BornBefore'))
@@ -65,13 +67,14 @@ elseif(strcmp(param, 'BornBefore'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
+    if(length(lista) >8)
+        for j =2:8 
             % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
             % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 elseif(strcmp(param, 'BornAfter'))
@@ -86,13 +89,14 @@ elseif(strcmp(param, 'BornAfter'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
-         % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
-         % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+    if(length(lista) >8)
+        for j =2:8 
+            % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
+            % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 elseif(strcmp(param, 'Language'))
@@ -106,13 +110,14 @@ elseif(strcmp(param, 'Language'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
-         % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
-         % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+    if(length(lista) >8)
+        for j =2:8 
+            % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
+            % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 elseif(strcmp(param, 'MaritalStatus'))
@@ -125,13 +130,14 @@ elseif(strcmp(param, 'MaritalStatus'))
             lista{ind, 4} = core.PatientRace{i};
             lista{ind, 5} = core.PatientLanguage{i};
             lista{ind, 6} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 7} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >6)
-        for j =2:6 
-         % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
-         % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 seis veces.
+    if(length(lista) >7)
+        for j =2:7
+            % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
+            % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
+            lista(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
 elseif(strcmp(param, 'Race'))
@@ -144,13 +150,14 @@ elseif(strcmp(param, 'Race'))
             lista{ind, 4} = core.PatientMaritalStatus{i};
             lista{ind, 5} = core.PatientLanguage{i};
             lista{ind, 6} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 7} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >6)
-        for j =2:6 
-         % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
-         % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 seis veces.
+    if(length(lista) >7)
+        for j =2:7
+            % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
+            % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
+            lista(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
 elseif(strcmp(param, 'PovertyBelow'))
@@ -165,13 +172,14 @@ elseif(strcmp(param, 'PovertyBelow'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
+    if(length(lista) >8)
+        for j =2:8 
             % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
             % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 elseif(strcmp(param, 'PovertyAbove'))
@@ -186,13 +194,14 @@ elseif(strcmp(param, 'PovertyAbove'))
             lista{ind, 5} = core.PatientMaritalStatus{i};
             lista{ind, 6} = core.PatientLanguage{i};
             lista{ind, 7} = core.PatientPopulationPercentageBelowPoverty(i);
+            lista{ind, 8} = core.x___PatientID{i};
         end
     end
-    if(length(lista) >7)
-        for j =2:7 
+    if(length(lista) >8)
+        for j =2:8 
             % Fix de un error que se genera por como MatLab funciona, y deja N filas vac?as 
             % despu?s de la primera, donde N es el n?mero de Columnas menos 1.
-            lista(2,:)= []; % Borrar fila 2 siete veces.
+            lista(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
 end
