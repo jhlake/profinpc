@@ -147,3 +147,9 @@ function SolveEqn_Callback(hObject, eventdata, handles)
 % hObject    handle to SolveEqn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+y0 = [str2double(handles.GlucInicial.String);str2double(handles.InsuInicial.String)];
+rb = str2double(handles.InsuRate.String);
+[yout, tout] = SolveDM(y0, rb);
+plot(yout, tout, 'LineWidth', 3);
+xlabel('t'); ylabel('Units');
+legend('Glucosa', 'Insulina');
