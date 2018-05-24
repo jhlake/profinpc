@@ -53,6 +53,7 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to main (see VARARGIN)
 
 % Choose default command line output for main
+movegui('center');
 handles.output = hObject;
 
 adress = uigetdir();
@@ -242,12 +243,16 @@ handles.newPatient.Photo = photoAdress;
 guidata(hObject, handles);
 
 
-
+ 
 % --- Executes on button press in pushbutton6.
-function pushbutton6_Callback(hObject, eventdata, handles)
+function addPatientButton_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+handles = AddPatient(handles);
+guidata(hObject, handles);
+
 
 
 % --- Executes on button press in dateOfBirthButton.
@@ -255,10 +260,11 @@ function dateOfBirthButton_Callback(hObject, eventdata, handles)
 % hObject    handle to dateOfBirthButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+uicalendar('DestinationUI', {handles.DateField, 'String'});
 
 
 % --- Executes on selection change in genderMenu.
-function genderMenu_Callback(hObject, eventdata, handles)
+function genderSelector_Callback(hObject, eventdata, handles)
 % hObject    handle to genderMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -281,7 +287,7 @@ end
 
 
 % --- Executes on selection change in maritalSatusMenu.
-function maritalSatusMenu_Callback(hObject, eventdata, handles)
+function maritalStatusSelector_Callback(hObject, eventdata, handles)
 % hObject    handle to maritalSatusMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -293,7 +299,7 @@ function maritalSatusMenu_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function maritalSatusSelector_CreateFcn(hObject, eventdata, handles)
+function maritalStatusSelector_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to maritalSatusMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -352,7 +358,7 @@ end
 
 
 % --- Executes on selection change in popupmenu8.
-function popupmenu8_Callback(hObject, eventdata, handles)
+function raceSelector_Callback(hObject, eventdata, handles)
 % hObject    handle to popupmenu8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -362,7 +368,7 @@ function popupmenu8_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu8_CreateFcn(hObject, eventdata, handles)
+function raceSelector_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to popupmenu8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
