@@ -67,7 +67,7 @@ handles.LCPT = LCPT;
 handles.PCPT = PCPT;
 handles.POI = POI;
 
-handles.newPat = struct('Names',[],'Surnames',[],'DateOfBirth',[],...
+handles.newPat = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
 % Update handles structure
 guidata(hObject, handles);
