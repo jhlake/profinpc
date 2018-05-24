@@ -108,6 +108,7 @@ function solveODEButton_Callback(hObject, eventdata, handles)
 % hObject    handle to solveODEButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+DIffEqn
 
 
 
@@ -222,6 +223,13 @@ function selectPhotoButton_Callback(hObject, eventdata, handles)
 % hObject    handle to selectPhotoButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
+=======
+photoAdress = uigetfile('*.png', '*.jpg');
+handles.newPatient.Photo = photoAdress;
+guidata(hObject, handles);
+
+>>>>>>> de9e501a1038bb5d7bfb6de9836b49e6e23edf94
 
 
 % --- Executes on button press in pushbutton6.
