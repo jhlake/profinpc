@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 24-May-2018 12:12:32
+% Last Modified by GUIDE v2.5 23-May-2018 23:38:18
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -53,22 +53,8 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to main (see VARARGIN)
 
 % Choose default command line output for main
-
-
-adress = uigetdir();
-
-
-
-[ACPT, ADCPT, LCPT, PCPT, POI] = ReadDatabase(adress);
 handles.output = hObject;
-handles.ACPT = ACPT;
-handles.ADCPT = ADCPT;
-handles.LCPT = LCPT;
-handles.PCPT = PCPT;
-handles.POI = POI;
 
-handles.newPat = struct('Names',[],'Surnames',[],'DateOfBirth',[],...
-    'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
 % Update handles structure
 guidata(hObject, handles);
 
@@ -236,20 +222,11 @@ function selectPhotoButton_Callback(hObject, eventdata, handles)
 % hObject    handle to selectPhotoButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-photoAdress = uigetdir();
-handles.newPatient.Photo = photoAdress;
-guidata(hObject, handles);
 
 
-
-
-
-
-
-
-% --- Executes on button press in addPatientButton.
-function addPatientButton_Callback(hObject, eventdata, handles)
-% hObject    handle to addPatientButton (see GCBO)
+% --- Executes on button press in pushbutton6.
+function pushbutton6_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -259,10 +236,6 @@ function dateOfBirthButton_Callback(hObject, eventdata, handles)
 % hObject    handle to dateOfBirthButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-uicalendar('DestinationUI', handles.DateField);
-guidata(hObject, handles);
-
 
 
 % --- Executes on selection change in genderMenu.
@@ -313,19 +286,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in raceSelector.
-function raceSelector_Callback(hObject, eventdata, handles)
-% hObject    handle to raceSelector (see GCBO)
+% --- Executes on selection change in popupmenu3.
+function popupmenu3_Callback(hObject, eventdata, handles)
+% hObject    handle to popupmenu3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns raceSelector contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from raceSelector
+% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu3 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popupmenu3
 
 
 % --- Executes during object creation, after setting all properties.
-function raceSelector_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to raceSelector (see GCBO)
+function popupmenu3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popupmenu3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -336,19 +309,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in maritalStatusSelector.
-function maritalStatusSelector_Callback(hObject, eventdata, handles)
-% hObject    handle to maritalStatusSelector (see GCBO)
+% --- Executes on selection change in popupmenu7.
+function popupmenu7_Callback(hObject, eventdata, handles)
+% hObject    handle to popupmenu7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns maritalStatusSelector contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from maritalStatusSelector
+% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu7 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popupmenu7
 
 
 % --- Executes during object creation, after setting all properties.
-function maritalStatusSelector_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to maritalStatusSelector (see GCBO)
+function popupmenu7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popupmenu7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -359,19 +332,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in genderSelector.
-function genderSelector_Callback(hObject, eventdata, handles)
-% hObject    handle to genderSelector (see GCBO)
+% --- Executes on selection change in popupmenu8.
+function popupmenu8_Callback(hObject, eventdata, handles)
+% hObject    handle to popupmenu8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns genderSelector contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from genderSelector
+% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu8 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popupmenu8
 
 
 % --- Executes during object creation, after setting all properties.
-function genderSelector_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to genderSelector (see GCBO)
+function popupmenu8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popupmenu8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
