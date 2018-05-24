@@ -54,7 +54,11 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for main
 handles.output = hObject;
-<<<<<<< HEAD
+
+adress = uigetdir();
+
+[ACPT,ADCPT,LCPT,PCPT,POI ] = ReadDatabase(adress);
+
 handles.ACPT = ACPT;
 handles.ADCPT = ADCPT;
 handles.LCPT = LCPT;
@@ -63,9 +67,7 @@ handles.POI = POI;
 
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
-=======
 
->>>>>>> 71e6d4db9e54064f1805e201cc5992927a99597d
 % Update handles structure
 guidata(hObject, handles);
 
@@ -234,13 +236,11 @@ function selectPhotoButton_Callback(hObject, eventdata, handles)
 % hObject    handle to selectPhotoButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-<<<<<<< HEAD
-=======
+
 photoAdress = uigetfile('*.png', '*.jpg');
 handles.newPatient.Photo = photoAdress;
 guidata(hObject, handles);
 
->>>>>>> de9e501a1038bb5d7bfb6de9836b49e6e23edf94
 
 
 % --- Executes on button press in pushbutton6.
@@ -268,7 +268,7 @@ function genderMenu_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function genderMenu_CreateFcn(hObject, eventdata, handles)
+function genderSelector_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to genderMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -293,7 +293,7 @@ function maritalSatusMenu_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function maritalSatusMenu_CreateFcn(hObject, eventdata, handles)
+function maritalSatusSelector_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to maritalSatusMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
