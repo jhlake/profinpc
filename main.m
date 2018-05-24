@@ -53,8 +53,22 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to main (see VARARGIN)
 
 % Choose default command line output for main
-handles.output = hObject;
 
+
+adress = uigetdir();
+
+
+
+[ACPT, ADCPT, LCPT, PCPT, POI] = ReadDatabase(adress);
+handles.output = hObject;
+handles.ACPT = ACPT;
+handles.ADCPT = ADCPT;
+handles.LCPT = LCPT;
+handles.PCPT = PCPT;
+handles.POI = POI;
+
+handles.newPat = struct('Names',[],'Surnames',[],'DateOfBirth',[],...
+    'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
 % Update handles structure
 guidata(hObject, handles);
 
@@ -222,6 +236,15 @@ function selectPhotoButton_Callback(hObject, eventdata, handles)
 % hObject    handle to selectPhotoButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+photoAdress = uigetdir();
+handles.newPatient.Photo = photoAdress;
+guidata(hObject, handles);
+
+
+
+
+
+
 
 
 % --- Executes on button press in addPatientButton.
@@ -236,6 +259,10 @@ function dateOfBirthButton_Callback(hObject, eventdata, handles)
 % hObject    handle to dateOfBirthButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+uicalendar('DestinationUI', handles.DateField);
+guidata(hObject, handles);
+
 
 
 % --- Executes on selection change in genderMenu.

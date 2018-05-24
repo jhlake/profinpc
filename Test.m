@@ -17,13 +17,14 @@
 
 
 
-
+% h = uicontrol('Style', 'pushbutton', 'Position', [20 150 100 70]);
+% uicalendar('DestinationUI', {h, 'String'});
 
 
 % fid = fopen('1.bin');
 % ecg = fread(fid, 'single');
 % fclose(fid);
-
+% 
 % b0 = 0.95; b1 = 0.001; b2 = 0.0002; c1 = 0.05; c2 = 0.04; rb = 33.33;
 % 
 % 
@@ -37,6 +38,7 @@
 % [TOUT, YOUT] = ode45(F, tspan, y0); 
 % plot(TOUT, YOUT);
 % datacursormode on
+uicalendar('DestinationUI', x);
 
 
 
