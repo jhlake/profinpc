@@ -22,7 +22,7 @@ function varargout = Exams(varargin)
 
 % Edit the above text to modify the response to help Exams
 
-% Last Modified by GUIDE v2.5 24-May-2018 16:06:54
+% Last Modified by GUIDE v2.5 24-May-2018 18:02:42
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -97,5 +97,125 @@ function ButLowPoli_Callback(hObject, eventdata, handles)
 % --- Executes on button press in ButTempPoli.
 function ButTempPoli_Callback(hObject, eventdata, handles)
 % hObject    handle to ButTempPoli (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function daysbeats_Callback(hObject, eventdata, handles)
+% hObject    handle to daysbeats (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of daysbeats as text
+%        str2double(get(hObject,'String')) returns contents of daysbeats as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function daysbeats_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to daysbeats (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton6.
+function pushbutton6_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton6 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function dayslow_Callback(hObject, eventdata, handles)
+% hObject    handle to dayslow (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of dayslow as text
+%        str2double(get(hObject,'String')) returns contents of dayslow as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function dayslow_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to dayslow (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function dayshigh_Callback(hObject, eventdata, handles)
+% hObject    handle to dayshigh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of dayshigh as text
+%        str2double(get(hObject,'String')) returns contents of dayshigh as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function dayshigh_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to dayshigh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton5.
+function pushbutton5_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton7.
+function pushbutton7_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton7 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function daystemp_Callback(hObject, eventdata, handles)
+% hObject    handle to daystemp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of daystemp as text
+%        str2double(get(hObject,'String')) returns contents of daystemp as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function daystemp_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to daystemp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton8.
+function pushbutton8_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
