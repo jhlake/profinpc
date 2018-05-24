@@ -151,5 +151,5 @@ y0 = [str2double(handles.GlucInicial.String);str2double(handles.InsuInicial.Stri
 rb = str2double(handles.InsuRate.String);
 [yout, tout] = SolveDM(y0, rb);
 plot(yout, tout, 'LineWidth', 3);
-xlabel('t'); ylabel('Units');
+xlabel('Time'); ylabel('Units');
 legend('Glucosa', 'Insulina');
