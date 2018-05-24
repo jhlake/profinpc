@@ -3,17 +3,17 @@
 %opts.Delimiter = {'\t', '\t\t', ' '};
 
 
-cosas = readtable('Angel_Barreto_Miguel_Walter.txt');
-
-cositas = (1:numel(cosas.Var1))';
-
-exams = {cosas.Var4;cosas.Var5;cosas.Var6;cosas.Var7};
-[p1,p2,p3,p4] = polis_exams(cositas,cosas.Var4,cosas.Var5,cosas.Var6,cosas.Var7);
-polis = {p1;p2;p3;p4};
-
-%plot(cositas, exams(1),'o')
-
-graficar_exams(cositas, exams, polis);
+% cosas = readtable('Angel_Barreto_Miguel_Walter.txt');
+% 
+% cositas = (1:numel(cosas.Var1))';
+% 
+% exams = {cosas.Var4;cosas.Var5;cosas.Var6;cosas.Var7};
+% [p1,p2,p3,p4] = polis_exams(cositas,cosas.Var4,cosas.Var5,cosas.Var6,cosas.Var7);
+% polis = {p1;p2;p3;p4};
+% 
+% %plot(cositas, exams(1),'o')
+% 
+% graficar_exams(cositas, exams, polis);
 
 
 

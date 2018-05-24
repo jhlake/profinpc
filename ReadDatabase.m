@@ -6,15 +6,15 @@ function [ ACPT, ADCPT, LCPT, PCPT, POI ] = ReadDatabase( PDAdress )
 
 
 
-ACPT = readtable([PDAdress, '/AdmissionsCorePopulatedTable382.txt'],'Delimiter',' ');
+ACPT = readtable([PDAdress, '/patientData/Historia_Clinica/AdmissionsCorePopulatedTable382.txt'],'Delimiter',' ');
 
-ADCPT = readtable([PDAdress, '/AdmissionsDiagnosesCorePopulatedTable382.txt'],'Delimiter',' ');
+ADCPT = readtable([PDAdress, '/patientData/Historia_Clinica/AdmissionsDiagnosesCorePopulatedTable382.txt'],'Delimiter',' ');
 
-LCPT = readtable([PDAdress, '/LabsCorePopulatedTable382.txt'],'Delimiter',' ');
+LCPT = readtable([PDAdress, '/patientData/Historia_Clinica/LabsCorePopulatedTable382.txt'],'Delimiter',' ');
 
-PCPT = readtable([PDAdress, '/PatientCorePopulatedTable382.txt'],'Delimiter',' ');
+PCPT = readtable([PDAdress, '/patientData/Historia_Clinica/PatientCorePopulatedTable382.txt'],'Delimiter',' ');
 
-POI = readtable([PDAdress, '/PatientOtherInformation382.txt'],'Delimiter',' ');
+POI = readtable([PDAdress, '/patientData/Historia_Clinica/PatientOtherInformation382.txt'],'Delimiter',' ');
 
 end
 
