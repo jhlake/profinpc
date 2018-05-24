@@ -1,4 +1,4 @@
-function lista = filterby(other, core, param, value)
+function lista = filterby(other, core, param, value, varargin)
 %%Implementaci?n de la funci?n de filtro por un parametro espec?fico.
 %other es la tabla de Patient Other Information.
 %core es la tabla de Core Populated Table.

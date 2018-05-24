@@ -55,6 +55,8 @@ function Buscar_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for Buscar
 handles.output = hObject;
 
+
+set(hObject,'HandleVisibility','on');
 % Update handles structure
 guidata(hObject, handles);
 
