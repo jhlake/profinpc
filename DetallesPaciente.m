@@ -22,6 +22,7 @@ function varargout = DetallesPaciente(varargin)
 
 % Edit the above text to modify the response to help DetallesPaciente
 
+% Last Modified by GUIDE v2.5 24-May-2018 14:22:53
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -94,12 +95,18 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 
 
 
+function ChangeName_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeName (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: get(hObject,'String') returns contents of ChangeName as text
+%        str2double(get(hObject,'String')) returns contents of ChangeName as a double
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangeName_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangeName (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -111,12 +118,18 @@ end
 
 
 
+function ChangeSurname_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeSurname (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: get(hObject,'String') returns contents of ChangeSurname as text
+%        str2double(get(hObject,'String')) returns contents of ChangeSurname as a double
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangeSurname_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangeSurname (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -157,12 +170,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on selection change in ChangeGender.
+function ChangeGender_Callback(hObject, eventdata, handles)
+% hObject    handle to ChangeGender (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Hints: contents = cellstr(get(hObject,'String')) returns ChangeGender contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from ChangeGender
 
 
 % --- Executes during object creation, after setting all properties.
+function ChangeGender_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ChangeGender (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -268,5 +288,26 @@ end
 % --- Executes on button press in pushbutton5.
 function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton12.
+function pushbutton12_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton12 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton13.
+function pushbutton13_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton13 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton14.
+function pushbutton14_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton14 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
