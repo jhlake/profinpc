@@ -22,8 +22,8 @@ test = true;
     handles.POI = [handles.POI;cellPatientOther];
     handles.PCPT = [handles.PCPT;cellPatientCore];
     %disp('hola');
-    writetable(handles.POI, 'patientData/Historia_Clinica/PatientCorePopulatedTable382.txt', 'Delimiter',' ');
-    writetable(handles.PCPT, 'patientData/Historia_Clinica/PatientOtherInformation382.txt', 'Delimiter',' ');
+    writetable(handles.PCPT, 'patientData/Historia_Clinica/PatientCorePopulatedTable382.txt', 'Delimiter',' ');
+    writetable(handles.POI, 'patientData/Historia_Clinica/PatientOtherInformation382.txt', 'Delimiter',' ');
 % catch 
 %     beep;
 %     msgbox('Empty fields, the patient was NOT added', 'Error');
