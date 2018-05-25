@@ -113,6 +113,8 @@ function ButLab_Callback(hObject, eventdata, handles)
 % hObject    handle to ButLab (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+stringFo=showlab(handles.datosf1.LCPT, handles.pacienteid);
+OpenLabsF(stringFo);
 
 
 
