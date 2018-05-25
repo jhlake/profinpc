@@ -112,12 +112,13 @@ for i = 1:numel(fields)
     res = eval(['searchParam.', a]);
 end
 
-if searchParam.Name 
-lista = {'giyehrud','gyfisu','yufer'};
-set(handles.patientsListbox,'String', lista);
-
-disp(searchParam);
+if searchParam.Name
+    lista = {'giyehrud','gyfisu','yufer'};
+    set(handles.patientsListbox,'String', lista);
 end
+
+    disp(searchParam);
+
 
 
 
