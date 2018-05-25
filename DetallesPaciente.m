@@ -361,17 +361,6 @@ function ButExam_Callback(hObject, eventdata, handles)
 % hObject    handle to ButExam (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-global todopa
-nombre = todopa{1};
-
-C = strsplit(nombre, ' ');
-global adress;
-adress1 = [C{3} '_' C{4} '_' C{1} '_' C{2}(1:end-1) '.txt'];
-global fulladr;
-fulladr = [adress '/Exams/' adress1];
-Exams
-
-
 
 
 
