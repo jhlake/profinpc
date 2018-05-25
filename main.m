@@ -66,6 +66,12 @@ handles.LCPT = LCPT;
 handles.PCPT = PCPT;
 handles.POI = POI;
 global searchParam;
+global ACORE ADIAG LABCORE PCORE POTHER;
+ACORE = ACPT;
+ADIAG = ADCPT;
+LABCORE = LCPT;
+PCORE = PCPT;
+POTHER = POI;
 
 handles.pacienteact = struct('Name',[]);
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
@@ -307,7 +313,8 @@ function detailsButton_Callback(hObject, eventdata, handles)
 index_selected = get(handles.patientsListbox,'Value');
 list = get(handles.patientsListbox,'String');
 nombrepaciente = list{index_selected};
-tempo = filterby(handles.POI, handles.PCPT, 'Name', nombrepaciente);
+global tempo; 
+tempo = filterby(handles.POI, handles.PCPT, {'Name', nombrepaciente});
 handles.pacienteact = tempo{1,8};
 guidata(hObject, handles);
 DetallesPaciente

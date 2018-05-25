@@ -54,11 +54,11 @@ function DetallesPaciente_OpeningFcn(hObject, eventdata, handles, varargin)
 movegui('center')
 % Choose default command line output for DetallesPaciente
 handles.output = hObject;
-global address;
+global adress tempo ACORE ADIAG LABCORE PCORE POTHER;
 handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
-handles.pacienteid = datosf1.pacienteact{1,8};
-handles.pacientetodo = specificpatient(handles.datosf1.POI,handles.datosf1.PCPT,handles.pacienteid);
-handles.url = address;
+handles.pacienteid = tempo;
+handles.pacientetodo = specificpatient(POTHER,PCORE,handles.pacienteid);
+handles.url = adress;
 axes(axes5)
 matlabImage = imread(strcat(handles.url,handles.pacientetodo{1,8}));
 image(matlabImage)
