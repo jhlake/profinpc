@@ -104,6 +104,9 @@ global done; done = false;
 while ~done
     pause(1);
 end
+
+%set(handles.patientsListbox, lista);
+
 disp(searchParam);
 
 
