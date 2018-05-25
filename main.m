@@ -105,7 +105,14 @@ while ~done
     pause(1);
 end
 
-%set(handles.patientsListbox, lista);
+fields = fieldnames(searchParam);
+
+for i = 1:numel(fields)
+    a = fields{i};
+    disp(eval(['searchParam.', a]));
+end
+lista = {'giyehrud','gyfisu','yufer'};
+set(handles.patientsListbox,'String', lista);
 
 disp(searchParam);
 
