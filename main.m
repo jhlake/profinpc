@@ -81,6 +81,13 @@ searchParam = struct('Name',[],'DateOfBirth',[],...
 set(hObject,'HandleVisibility','on');
 
 
+
+lista = handles.POI.Name;
+
+
+a = cat(2, lista(:,1));
+set(handles.patientsListbox,'String', a);
+
 % Update handles structure
 guidata(hObject, handles);
 
@@ -118,57 +125,57 @@ for i = 1:numel(fields)
     res = eval(['searchParam.', a]);
 end
 
-  %lista = {'giyehrud','gyfisu','yufer'};
-   % set(handles.patientsListbox,'String', lista);
-    
+%lista = {'giyehrud','gyfisu','yufer'};
+% set(handles.patientsListbox,'String', lista);
+
 count = 0;
 param = {};
 if ~isempty(searchParam.Name)
-   count = count+1;
-   param{end+1} = 'Name';
-   param{end+1} = searchParam.Name;
+    count = count+1;
+    param{end+1} = 'Name';
+    param{end+1} = searchParam.Name;
 end
 
 if ~strcmp(searchParam.DateOfBirth, 'AAAA-MM-DD HH:MM:SS.MSS')
-   count = count+1;
-   param{end+1} = 'BornAfter';
-   param{end+1} = searchParam.DateOfBirth;
+    count = count+1;
+    param{end+1} = 'BornAfter';
+    param{end+1} = searchParam.DateOfBirth;
 end
 
 if ~strcmp(searchParam.Gender, 'All')
-   count = count+1;
-   param{end+1} = 'Gender';
-   param{end+1} = searchParam.Gender;
+    count = count+1;
+    param{end+1} = 'Gender';
+    param{end+1} = searchParam.Gender;
 end
 
 if ~strcmp(searchParam.Race, 'All')
-   count = count+1;
-   param{end+1} = 'Race';
-   param{end+1} = searchParam.Race;
+    count = count+1;
+    param{end+1} = 'Race';
+    param{end+1} = searchParam.Race;
 end
 
 if ~isempty(searchParam.Language)
-   count = count+1;
-   param{end+1} = 'Language';
-   param{end+1} = searchParam.Language;
+    count = count+1;
+    param{end+1} = 'Language';
+    param{end+1} = searchParam.Language;
 end
 
 if ~strcmp(searchParam.Poverty, '0')
-   count = count+1;
-   param{end+1} = 'PovertyBelow';
-   param{end+1} = searchParam.Poverty;
+    count = count+1;
+    param{end+1} = 'PovertyBelow';
+    param{end+1} = str2double(searchParam.Poverty);
 end
 
 if ~strcmp(searchParam.MaritalStatus, 'All')
-   count = count+1;
-   param{end+1} = 'MaritalStatus';
-   param{end+1} = searchParam.MaritalStatus;
+    count = count+1;
+    param{end+1} = 'MaritalStatus';
+    param{end+1} = searchParam.MaritalStatus;
 end
 if count >= 1
     lista = filterby(handles.POI, handles.PCPT, param);
 end
 
-if count == 0
+if numel(lista) == 0
     lista = handles.POI.Name;
 end
 
@@ -313,7 +320,7 @@ function detailsButton_Callback(hObject, eventdata, handles)
 index_selected = get(handles.patientsListbox,'Value');
 list = get(handles.patientsListbox,'String');
 nombrepaciente = list{index_selected};
-global tempo; 
+global tempo;
 tempo = filterby(handles.POI, handles.PCPT, {'Name', nombrepaciente});
 handles.pacienteact = tempo{1,8};
 guidata(hObject, handles);
@@ -326,6 +333,14 @@ function resetSearchButton_Callback(hObject, eventdata, handles)
 % hObject    handle to resetSearchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+lista = handles.POI.Name;
+
+
+a = cat(2, lista(:,1));
+set(handles.patientsListbox,'String', a);
+
+
 
 
 % --- Executes on button press in selectPhotoButton.
@@ -346,7 +361,28 @@ function addPatientButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+handles.newPat.Name = handles.nameTextbox.String;
+
+handles.newPat.DateOfBirth = handles.DateField.String;
+
+index_selected = get(handles.genderSelector,'Value');
+list = get(handles.genderSelector,'String');
+handles.newPat.Gender = list{index_selected};
+
+index_selected = get(handles.raceSelector,'Value');
+list = get(handles.raceSelector,'String');
+handles.newPat.Race = list{index_selected};
+
+handles.newPat.Language = handles.languageTextbox.String;
+
+handles.newPat.Poverty = handles.povertyTextbox.String;
+
+index_selected = get(handles.maritalStatusSelector,'Value');
+list = get(handles.maritalStatusSelector,'String');
+handles.newPat.MaritalStatus = list{index_selected};
+
 AddPatient(handles);
+
 global adress;
 [ACPT,ADCPT,LCPT,PCPT,POI ] = ReadDatabase(adress);
 
