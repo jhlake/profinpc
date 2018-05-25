@@ -292,5 +292,6 @@ end
 % end
 
 guidata(hObject, handles);
+close;
 
 
