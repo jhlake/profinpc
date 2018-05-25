@@ -54,13 +54,10 @@ function Buscar_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for Buscar
 handles.output = hObject;
-<<<<<<< HEAD
 handles.otroHandles = varargin(1);
-=======
 
 
 set(hObject,'HandleVisibility','on');
->>>>>>> 16a5dcb3beb321280f79dd45588026d573605cd1
 % Update handles structure
 guidata(hObject, handles);
 
@@ -268,27 +265,32 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+global searchParam; global done;
+
+done = true;
+
 if ~strcmp(handles.edit1.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+    searchParam.Name = handles.edit1.String;
 end
 if ~strcmp(handles.edit7.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.DateOfBirth = handles.edit7.String;
+    searchParam.DateOfBirth = handles.edit7.String;
 end
 if ~strcmp(handles.edit8.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.Language = handles.edit8.String;
+    searchParam.Language = handles.edit8.String;
 end
 if ~strcmp(handles.edit1.String,'0')
-    handles.otroHandles{1}.searchParam.Poverty = handles.edit6.String;
+    searchParam.Poverty = handles.edit6.String;
 end
-if ~strcmp(handles.edit1.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-end
-if ~strcmp(handles.edit1.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-end
-if ~strcmp(handles.edit1.String,'Edit Text')
-    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-end
+% if ~strcmp(handles.edit1.String,'Edit Text')
+%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+% end
+% if ~strcmp(handles.edit1.String,'Edit Text')
+%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+% end
+% if ~strcmp(handles.edit1.String,'Edit Text')
+%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+% end
+
 guidata(hObject, handles);
 
 

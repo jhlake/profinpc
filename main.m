@@ -65,17 +65,15 @@ handles.ADCPT = ADCPT;
 handles.LCPT = LCPT;
 handles.PCPT = PCPT;
 handles.POI = POI;
+global searchParam;
 
-handles.pacienteact;
+handles.pacienteact = struct('Name',[]);
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
-<<<<<<< HEAD
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[],'Photo',[],'ID',[]);
-handles.searchParam = struct('Name',[],'DateOfBirth',[],...
+searchParam = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[]);
-=======
-    'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
 set(hObject,'HandleVisibility','on');
->>>>>>> 16a5dcb3beb321280f79dd45588026d573605cd1
+
 
 % Update handles structure
 guidata(hObject, handles);
@@ -100,9 +98,13 @@ function searchButton_Callback(hObject, eventdata, handles)
 % hObject    handle to searchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-out = Buscar(handles);
-handles = out;
-guidata(hObject, handles);
+Buscar(handles);
+global searchParam;
+global done; done = false;
+while ~done
+pause(1);
+end
+disp(searchParam);
 
 
 
