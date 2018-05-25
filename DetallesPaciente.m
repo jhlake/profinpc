@@ -54,11 +54,13 @@ function DetallesPaciente_OpeningFcn(hObject, eventdata, handles, varargin)
 movegui('center')
 % Choose default command line output for DetallesPaciente
 handles.output = hObject;
-global adress tempo ACORE ADIAG LABCORE PCORE POTHER;
+global adress tempo PCORE POTHER;
 handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
-handles.pacientetodo = specificpatient(POTHER,PCORE,handles.pacienteid);
+global todopa;
+todopa = specificpatient(POTHER,PCORE,tempo{1,8});
+handles.todo=todopa;
 handles.url = adress;
-axes(axes5)
+axes('axis5')
 matlabImage = imread(strcat(handles.url,tempo{1,8}));
 image(matlabImage)
 axis off
@@ -97,7 +99,7 @@ function ButECG_Callback(hObject, eventdata, handles)
 % hObject    handle to ButECG (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-fid = fopen(strcat(address,'/',handles.pacientetodo{1,9}));
+fid = fopen(strcat(address,'/',handles.todo{1,9}));
 [bpm, alert] = datapro(fread(fid, 'single'));
 if(alert)
     f = msgbox({'This Patients Beats per Minute are: ', int2str(bpm);'It is under the normal range of 60 to 100.'});
@@ -138,7 +140,7 @@ function ChangeName_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-set(hObject, 'String',handles.pacientetodo{1, 1});
+set(hObject, 'String',handles.todo(1, 1));
 
 
 
@@ -215,7 +217,7 @@ function ChangeGender_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-if(strcmp(handles.pacientetodo{1,6}, 'Male'))
+if(strcmp(handles.todo{1,6}, 'Male'))
     set(hObject, 'Value', 2);
 else
     set(hObject, 'Value', 3);
@@ -244,7 +246,7 @@ function ChangeRace_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-aop = handles.pacientetodo;
+aop = handles.todo;
 if(strcmp(aop{1,4}, 'White'))
     set(hObject, 'Value', 2);
 elseif(strcmp(aop{1,4}, 'Asian'))
@@ -300,7 +302,7 @@ function ChangePoverty_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-set(hObject, 'String', int2str(handles.pacientetodo{1, 7}));
+set(hObject, 'String', int2str(handles.todo{1, 7}));
 
 
 % --- Executes on selection change in ChangeMarital.
@@ -324,13 +326,13 @@ function ChangeMarital_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-if(strcmp(handles.pacientetodo{1,5}, 'Single'))
+if(strcmp(handles.todo{1,5}, 'Single'))
     set(hObject, 'Value', 2);
-elseif(strcmp(handles.pacientetodo{1,5}, 'Married'))
+elseif(strcmp(handles.todo{1,5}, 'Married'))
     set(hObject, 'Value', 3);
-elseif(strcmp(handles.pacientetodo{1,5}, 'Divorced'))
+elseif(strcmp(handles.todo{1,5}, 'Divorced'))
     set(hObject, 'Value', 4);
-elseif(strcmp(handles.pacientetodo{1,5}, 'Unknown'))
+elseif(strcmp(handles.todo{1,5}, 'Unknown'))
     set(hObject, 'Value', 5);
 end
 
