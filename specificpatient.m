@@ -11,5 +11,6 @@ for i= 1:height(other)
         patInfo{1, 6} = core.PatientLanguage{i};
         patInfo{1, 7} = core.PatientPopulationPercentageBelowPoverty(i);
         patInfo{1, 8} = other.Pictureid{i};
+        patInfo{1, 9} = other.ECG{i};
     end
 end

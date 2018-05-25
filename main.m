@@ -258,13 +258,7 @@ function addPatientButton_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-handles.newPat.Name = handles.nameTextbox.String;
-handles.newPat.DateOfBirth = handles.DateField.String;
-handles.newPat.Gender = handles.genderSelector.String(handles.genderSelector.Value);
-handles.newPat.Race = handles.raceSelector.String(handles.raceSelector.Value);
-handles.newPat.Language = handles.languageTextbox.String;
-handles.newPat.Poverty = handles.povertyTextbox.String;
-handles.newPat.MaritalStatus = handles.maritalStatusSelector.String(handles.maritalStatusSelector.Value);
+
 handles = AddPatient(handles);
 guidata(hObject, handles);
 
