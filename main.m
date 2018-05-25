@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 23-May-2018 23:38:18
+% Last Modified by GUIDE v2.5 24-May-2018 18:31:44
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -66,16 +66,22 @@ handles.LCPT = LCPT;
 handles.PCPT = PCPT;
 handles.POI = POI;
 
+handles.pacienteact;
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
+<<<<<<< HEAD
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[],'Photo',[],'ID',[]);
 handles.searchParam = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[]);
+=======
+    'Gender',[],'Race',[],'Language',[],'Povery',[],'MaritalStatus',[],'Photo',[],'ID',[]);
+set(hObject,'HandleVisibility','on');
+>>>>>>> 16a5dcb3beb321280f79dd45588026d573605cd1
 
 % Update handles structure
 guidata(hObject, handles);
 
 % UIWAIT makes main wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
+% uiwait(handles.mainfig);
 
 
 % --- Outputs from this function are returned to the command line.
@@ -229,7 +235,14 @@ function detailsButton_Callback(hObject, eventdata, handles)
 % hObject    handle to detailsButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+index_selected = get(patientsListbox,'Value');
+list = get(patientsListbox,'String');
+nombrepaciente = list{index_selected};
+tempo = filterby(handles.POI, handles.PCPT, 'Name', nombrepaciente);
+handles.pacienteact = tempo{1,8};
+guidata(hObject, handles);
 DetallesPaciente
+
 
 
 % --- Executes on button press in resetSearchButton.
@@ -256,16 +269,6 @@ function addPatientButton_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-handles.newPat.Name = handles.nameTextbox.String;
-handles.newPat.DateOfBirth = handles.DateField.String;
-handles.newPat.Gender = handles.genderSelector.String(handles.genderSelector.Value);
-handles.newPat.Race = handles.raceSelector.String(handles.raceSelector.Value);
-handles.newPat.Language = handles.languageTextbox.String;
-handles.newPat.Poverty = handles.povertyTextbox.String;
-handles.newPat.MaritalStatus = handles.maritalStatusSelector.String(handles.maritalStatusSelector.Value);
-
-
 
 handles = AddPatient(handles);
 guidata(hObject, handles);

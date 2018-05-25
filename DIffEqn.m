@@ -55,6 +55,7 @@ movegui('center')
 % Choose default command line output for DIffEqn
 handles.output = hObject;
 
+set(hObject,'HandleVisibility','on');
 % Update handles structure
 guidata(hObject, handles);
 

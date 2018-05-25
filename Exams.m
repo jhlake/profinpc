@@ -22,7 +22,7 @@ function varargout = Exams(varargin)
 
 % Edit the above text to modify the response to help Exams
 
-% Last Modified by GUIDE v2.5 24-May-2018 18:02:42
+% Last Modified by GUIDE v2.5 24-May-2018 18:33:07
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,11 +55,13 @@ function Exams_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for Exams
 handles.output = hObject;
 
+
+set(hObject,'HandleVisibility','on');
 % Update handles structure
 guidata(hObject, handles);
 
 % UIWAIT makes Exams wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
+% uiwait(handles.examsfig);
 
 
 % --- Outputs from this function are returned to the command line.

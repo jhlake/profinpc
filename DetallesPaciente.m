@@ -55,6 +55,13 @@ movegui('center')
 % Choose default command line output for DetallesPaciente
 handles.output = hObject;
 
+handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
+handles.pacienteid = datosf1.pacienteact{1,8};
+handles.pacientetodo = specificpatient(handles.datosf1.POI,handles.datosf1.PCPT,handles.pacienteid);
+
+set(handles.DispBirth, 'String', myString);
+set(hObject,'HandleVisibility','on');
+
 % Update handles structure
 guidata(hObject, handles);
 
@@ -115,6 +122,7 @@ function ChangeName_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+set(hObject, 'String',handles.pacientetodo{1, 1});
 
 
 
@@ -191,6 +199,12 @@ function ChangeGender_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+if(strcmp(handles.pacientetodo{1,6}, 'Male'))
+    set(hObject, 'Value', 2);
+else
+    set(hObject, 'Value', 3);
+end
+
 
 
 % --- Executes on selection change in ChangeRace.
@@ -213,6 +227,15 @@ function ChangeRace_CreateFcn(hObject, eventdata, handles)
 %       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
+end
+if(strcmp(handles.pacientetodo{1,4}, 'White'))
+    set(hObject, 'Value', 2);
+elseif(strcmp(handles.pacientetodo{1,4}, 'Asian'))
+    set(hObject, 'Value', 3);
+elseif(strcmp(handles.pacientetodo{1,4}, 'African American'))
+    set(hObject, 'Value', 4);
+elseif(strcmp(handles.pacientetodo{1,4}, 'Unknown'))
+    set(hObject, 'Value', 5);
 end
 
 
@@ -260,6 +283,7 @@ function ChangePoverty_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+set(hObject, 'String', int2str(handles.pacientetodo{1, 7}));
 
 
 % --- Executes on selection change in ChangeMarital.
@@ -282,6 +306,15 @@ function ChangeMarital_CreateFcn(hObject, eventdata, handles)
 %       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
+end
+if(strcmp(handles.pacientetodo{1,5}, 'Single'))
+    set(hObject, 'Value', 2);
+elseif(strcmp(handles.pacientetodo{1,5}, 'Married'))
+    set(hObject, 'Value', 3);
+elseif(strcmp(handles.pacientetodo{1,5}, 'Divorced'))
+    set(hObject, 'Value', 4);
+elseif(strcmp(handles.pacientetodo{1,5}, 'Unknown'))
+    set(hObject, 'Value', 5);
 end
 
 
