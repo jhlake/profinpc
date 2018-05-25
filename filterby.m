@@ -1,4 +1,4 @@
-function lista = filterby(other, core, param, value, extra)
+function lista = filterby(other, core, extra)
 %%Implementaci?n de la funci?n de filtro por un parametro espec?fico.
 %other es la tabla de Patient Other Information.
 %core es la tabla de Core Populated Table.
@@ -14,10 +14,10 @@ function lista = filterby(other, core, param, value, extra)
 % - PovertyAbove
 
 list ={};
-if(strcmp(param, 'Name'))
+if(strcmp(extra{1}, 'Name'))
     for i = 1:height(other)
          ind = length(list)+1;
-        if(strfind(other.Name{i},value))
+        if(strfind(other.Name{i},extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -35,10 +35,10 @@ if(strcmp(param, 'Name'))
             list(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
-elseif(strcmp(param, 'Gender'))
+elseif(strcmp(extra{1}, 'Gender'))
     for i = 1:height(core)
          ind = length(list)+1;
-        if(strfind(core.PatientGender{i},value))
+        if(strfind(core.PatientGender{i},extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -56,11 +56,11 @@ elseif(strcmp(param, 'Gender'))
             list(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
-elseif(strcmp(param, 'BornBefore'))
+elseif(strcmp(extra{1}, 'BornBefore'))
     for i = 1:height(core)
          ind = length(list)+1;
          pov = cellfun(@(s)s(1:4),core.PatientDateOfBirth,'UniformOutput',false);
-        if(str2num(pov{i}) <= str2num(value))
+        if(str2num(pov{i}) <= str2num(extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -78,11 +78,11 @@ elseif(strcmp(param, 'BornBefore'))
             list(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
-elseif(strcmp(param, 'BornAfter'))
+elseif(strcmp(extra{1}, 'BornAfter'))
     for i = 1:height(core)
          ind = length(list)+1;
          pov = cellfun(@(s)s(1:4),core.PatientDateOfBirth,'UniformOutput',false);
-        if(str2num(pov{i}) >= str2num(value))
+        if(str2num(pov{i}) >= str2num(extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -100,10 +100,10 @@ elseif(strcmp(param, 'BornAfter'))
             list(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
-elseif(strcmp(param, 'Language'))
+elseif(strcmp(extra{1}, 'Language'))
     for i = 1:height(core)
          ind = length(list)+1;
-         if(strfind(core.PatientLanguage{i},value))
+         if(strfind(core.PatientLanguage{i},extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -121,10 +121,10 @@ elseif(strcmp(param, 'Language'))
             list(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
-elseif(strcmp(param, 'MaritalStatus'))
+elseif(strcmp(extra{1}, 'MaritalStatus'))
     for i = 1:height(core)
          ind = length(list)+1;
-         if(strcmp(core.PatientMaritalStatus{i},value))
+         if(strcmp(core.PatientMaritalStatus{i},extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -142,10 +142,10 @@ elseif(strcmp(param, 'MaritalStatus'))
             list(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
-elseif(strcmp(param, 'Race'))
+elseif(strcmp(extra{1}, 'Race'))
     for i = 1:height(core)
          ind = length(list)+1;
-         if(strcmp(core.PatientRace{i},value))
+         if(strcmp(core.PatientRace{i},extra{2}))
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -163,11 +163,11 @@ elseif(strcmp(param, 'Race'))
             list(2,:)= []; % Borrar fila 2 siete veces.
         end
     end
-elseif(strcmp(param, 'PovertyBelow'))
+elseif(strcmp(extra{1}, 'PovertyBelow'))
     for i = 1:height(core)
          ind = length(list)+1;
          pov = core.PatientPopulationPercentageBelowPoverty(:);
-        if(pov(i) <= value)
+        if(pov(i) <= extra{2})
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -185,11 +185,11 @@ elseif(strcmp(param, 'PovertyBelow'))
             list(2,:)= []; % Borrar fila 2 ocho veces.
         end
     end
-elseif(strcmp(param, 'PovertyAbove'))
+elseif(strcmp(extra{1}, 'PovertyAbove'))
     for i = 1:height(core)
          ind = length(list)+1;
          pov = core.PatientPopulationPercentageBelowPoverty(:);
-        if(pov(i) >= value)
+        if(pov(i) >= extra{2})
             list{ind, 1} = other.Name{i};
             list{ind, 2} = core.PatientGender{i};
             list{ind, 3} = core.PatientDateOfBirth{i};
@@ -208,8 +208,8 @@ elseif(strcmp(param, 'PovertyAbove'))
         end
     end
 end
-if(length(extra)>1)
-    lista = refilter(list, extra);
+if(length(extra)>3)
+    lista = refilter(list, extra(3:end));
 else
     lista=list;
 end
