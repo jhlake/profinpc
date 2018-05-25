@@ -304,8 +304,8 @@ function detailsButton_Callback(hObject, eventdata, handles)
 % hObject    handle to detailsButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-index_selected = get(patientsListbox,'Value');
-list = get(patientsListbox,'String');
+index_selected = get(handles.patientsListbox,'Value');
+list = get(handles.patientsListbox,'String');
 nombrepaciente = list{index_selected};
 tempo = filterby(handles.POI, handles.PCPT, 'Name', nombrepaciente);
 handles.pacienteact = tempo{1,8};
