@@ -98,6 +98,14 @@ function ButECG_Callback(hObject, eventdata, handles)
 % hObject    handle to ButECG (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+fid = fopen(strcat(address,'/',handles.pacientetodo{1,9}));
+[bpm, alert] = datapro(fread(fid, 'single'));
+if(alert)
+    f = msgbox({'This Patients Beats per Minute are: ', int2str(bpm);'It is under the normal range of 60 to 100.'});
+else
+    f = msgbox({'This Patients Beats per Minute are: ', int2str(bpm);'WARNING! It is outside the normal range!'});
+end
+
 
 
 % --- Executes on button press in ButLab.
@@ -234,13 +242,14 @@ function ChangeRace_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-if(strcmp(handles.pacientetodo{1,4}, 'White'))
+aop = handles.pacientetodo;
+if(strcmp(aop{1,4}, 'White'))
     set(hObject, 'Value', 2);
-elseif(strcmp(handles.pacientetodo{1,4}, 'Asian'))
+elseif(strcmp(aop{1,4}, 'Asian'))
     set(hObject, 'Value', 3);
-elseif(strcmp(handles.pacientetodo{1,4}, 'African American'))
+elseif(strcmp(aop{1,4}, 'African American'))
     set(hObject, 'Value', 4);
-elseif(strcmp(handles.pacientetodo{1,4}, 'Unknown'))
+elseif(strcmp(aop{1,4}, 'Unknown'))
     set(hObject, 'Value', 5);
 end
 
