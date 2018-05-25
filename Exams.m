@@ -51,7 +51,18 @@ function Exams_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Exams (see VARARGIN)
+global fulladr;
+cosas = readtable(fulladr);
 
+cositas = (1:numel(cosas.Var1))';
+
+exams = {cosas.Var4;cosas.Var5;cosas.Var6;cosas.Var7};
+[p1,p2,p3,p4] = polis_exams(cositas,cosas.Var4,cosas.Var5,cosas.Var6,cosas.Var7);
+polis = {p1;p2;p3;p4};
+
+%plot(cositas, exams(1),'o')
+
+graficar_exams(cositas, exams, polis, handles);
 % Choose default command line output for Exams
 handles.output = hObject;
 
