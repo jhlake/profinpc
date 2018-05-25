@@ -117,59 +117,58 @@ end
     
 count = 0;
 param = {};
-van = logical([0,0,0,0,0,0,0]);
 if ~isempty(searchParam.Name)
    count = count+1;
-   van(1) = true;
    param{end+1} = 'Name';
    param{end+1} = searchParam.Name;
 end
 
 if ~strcmp(searchParam.DateOfBirth, 'AAAA-MM-DD HH:MM:SS.MSS')
    count = count+1;
-   van(2) = true;
    param{end+1} = 'BornAfter';
    param{end+1} = searchParam.DateOfBirth;
 end
 
 if ~strcmp(searchParam.Gender, 'All')
    count = count+1;
-   van(3) = true;
    param{end+1} = 'Gender';
    param{end+1} = searchParam.Gender;
 end
 
 if ~strcmp(searchParam.Race, 'All')
    count = count+1;
-   van(4) = true;
    param{end+1} = 'Race';
    param{end+1} = searchParam.Race;
 end
 
 if ~isempty(searchParam.Language)
    count = count+1;
-   van(5) = true;
    param{end+1} = 'Language';
    param{end+1} = searchParam.Language;
 end
 
 if ~strcmp(searchParam.Poverty, '0')
    count = count+1;
-   van(6) = true;
    param{end+1} = 'PovertyBelow';
    param{end+1} = searchParam.Poverty;
 end
 
 if ~strcmp(searchParam.MaritalStatus, 'All')
    count = count+1;
-   van(7) = true;
    param{end+1} = 'MaritalStatus';
    param{end+1} = searchParam.MaritalStatus;
 end
+if count > 1
+    lista = filterby(handles.POI, handles.PCPT, param);
+end
 
-lista = filterby(handles.POI, handles.PCPT, param);
+if count == 0
+    lista = handles.POI.Name;
+end
+
 a = cat(2, lista(:,1));
 set(handles.patientsListbox,'String', a);
+
 
 %disp(searchParam);
 
