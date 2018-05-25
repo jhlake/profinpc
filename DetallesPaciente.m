@@ -56,11 +56,10 @@ movegui('center')
 handles.output = hObject;
 global adress tempo ACORE ADIAG LABCORE PCORE POTHER;
 handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
-handles.pacienteid = tempo;
 handles.pacientetodo = specificpatient(POTHER,PCORE,handles.pacienteid);
 handles.url = adress;
 axes(axes5)
-matlabImage = imread(strcat(handles.url,handles.pacientetodo{1,8}));
+matlabImage = imread(strcat(handles.url,tempo{1,8}));
 image(matlabImage)
 axis off
 axis image;
@@ -113,7 +112,8 @@ function ButLab_Callback(hObject, eventdata, handles)
 % hObject    handle to ButLab (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-stringFo=showlab(handles.datosf1.LCPT, handles.pacienteid);
+global LABCORE;
+stringFo=showlab(LABCORE, handles.pacienteid);
 OpenLabsF(stringFo);
 
 
