@@ -112,12 +112,69 @@ for i = 1:numel(fields)
     res = eval(['searchParam.', a]);
 end
 
-if searchParam.Name
-    lista = {'giyehrud','gyfisu','yufer'};
+  lista = {'giyehrud','gyfisu','yufer'};
     set(handles.patientsListbox,'String', lista);
+    
+count = 0;
+param = {};
+van = logical([0,0,0,0,0,0,0]);
+if ~isempty(searchParam.Name)
+   count = count+1;
+   van(1) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
 end
 
-    disp(searchParam);
+if ~strcmp(searchParam.DateOfBirth, 'AAAA-MM-DD HH:MM:SS.MSS')
+   count = count+1;
+   van(2) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+if ~strcmp(searchParam.Gender, 'All')
+   count = count+1;
+   van(3) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+if ~strcmp(searchParam.Race, 'All')
+   count = count+1;
+   van(4) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+if ~isempty(searchParam.Language)
+   count = count+1;
+   van(5) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+if ~strcmp(searchParam.Poverty, '0')
+   count = count+1;
+   van(6) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+if ~strcmp(searchParam.MaritalStatus, 'All')
+   count = count+1;
+   van(7) = true;
+   param{end+1} = 'Name';
+   param{end+1} = searchParam.Name;
+end
+
+
+
+
+lista = filterby()
+
+
+
+ disp(searchParam);
 
 
 
