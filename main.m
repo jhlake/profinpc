@@ -164,7 +164,7 @@ if ~strcmp(searchParam.MaritalStatus, 'All')
    param{end+1} = 'MaritalStatus';
    param{end+1} = searchParam.MaritalStatus;
 end
-if count > 1
+if count >= 1
     lista = filterby(handles.POI, handles.PCPT, param);
 end
 
