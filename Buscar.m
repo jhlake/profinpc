@@ -22,7 +22,7 @@ function varargout = Buscar(varargin)
 
 % Edit the above text to modify the response to help Buscar
 
-% Last Modified by GUIDE v2.5 24-May-2018 16:46:46
+% Last Modified by GUIDE v2.5 24-May-2018 19:00:22
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -54,7 +54,7 @@ function Buscar_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for Buscar
 handles.output = hObject;
-
+handles.otroHandles = varargin(1);
 % Update handles structure
 guidata(hObject, handles);
 
@@ -70,7 +70,7 @@ function varargout = Buscar_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.output;
+varargout{1} = handles.otroHandles{1};
 
 
 
@@ -262,3 +262,27 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+if ~strcmp(handles.edit1.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+end
+if ~strcmp(handles.edit7.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.DateOfBirth = handles.edit7.String;
+end
+if ~strcmp(handles.edit8.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.Language = handles.edit8.String;
+end
+if ~strcmp(handles.edit1.String,'0')
+    handles.otroHandles{1}.searchParam.Poverty = handles.edit6.String;
+end
+if ~strcmp(handles.edit1.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+end
+if ~strcmp(handles.edit1.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+end
+if ~strcmp(handles.edit1.String,'Edit Text')
+    handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
+end
+guidata(hObject, handles);
+
+

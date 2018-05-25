@@ -68,6 +68,8 @@ handles.POI = POI;
 
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[],'Photo',[],'ID',[]);
+handles.searchParam = struct('Name',[],'DateOfBirth',[],...
+    'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[]);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -92,6 +94,12 @@ function searchButton_Callback(hObject, eventdata, handles)
 % hObject    handle to searchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+out = Buscar(handles);
+handles = out;
+guidata(hObject, handles);
+
+
+
 
 
 % --- Executes on selection change in patientsListbox.
@@ -169,7 +177,6 @@ function surnameTextbox_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function languageTextbox_Callback(hObject, eventdata, handles)

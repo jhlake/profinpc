@@ -12,7 +12,7 @@ test = true;
 % end
 
 
-try
+% try
     ID = generarID(handles.ACPT.x___PatientID);
     cellPatientOther = {[],handles.newPat.Photo, handles.newPat.Name, ID};
     cellPatientCore = {ID, handles.newPat.Gender,...
@@ -21,11 +21,11 @@ try
         str2double(handles.newPat.Poverty)};
     handles.POI = [handles.POI;cellPatientOther];
     handles.PCPT = [handles.PCPT;cellPatientCore];
-    writetable(handles.POI, 'patientData/HistoriaClinica/PatientCorePopulatedTable382.txt', 'Delimiter','\t');
-    writetable(handles.PCPT, 'patientData/HistoriaClinica/PatientOtherInformation382.txt', 'Delimiter','\t');
-catch 
-    beep;
-    msgbox('Empty fields, the patient was NOT added', 'Error');
-end
+    writetable(handles.POI, 'patientData/Historia_Clinica/PatientCorePopulatedTable382.txt', 'Delimiter','\t');
+    writetable(handles.PCPT, 'patientData/Historia_Clinica/PatientOtherInformation382.txt', 'Delimiter','\t');
+% catch 
+%     beep;
+%     msgbox('Empty fields, the patient was NOT added', 'Error');
+% end
     
     
