@@ -22,7 +22,7 @@ function varargout = Buscar(varargin)
 
 % Edit the above text to modify the response to help Buscar
 
-% Last Modified by GUIDE v2.5 24-May-2018 19:50:55
+% Last Modified by GUIDE v2.5 24-May-2018 19:00:22
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,7 +55,10 @@ movegui('center');
 
 % Choose default command line output for Buscar
 handles.output = hObject;
+handles.otroHandles = varargin(1);
 
+
+set(hObject,'HandleVisibility','on');
 % Update handles structure
 guidata(hObject, handles);
 
@@ -71,7 +74,7 @@ function varargout = Buscar_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.output;
+varargout{1} = handles.otroHandles{1};
 
 
 
@@ -265,49 +268,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on selection change in SearchGender.
-function SearchGender_Callback(hObject, eventdata, handles)
-% hObject    handle to SearchGender (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns SearchGender contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from SearchGender
-
-
-% --- Executes during object creation, after setting all properties.
-function SearchGender_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to SearchGender (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
 end
-
-
-% --- Executes on selection change in SearchRace.
-function SearchRace_Callback(hObject, eventdata, handles)
-% hObject    handle to SearchRace (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns SearchRace contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from SearchRace
-
-
-% --- Executes during object creation, after setting all properties.
-function SearchRace_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to SearchRace (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
 end
 
 <<<<<<< HEAD
@@ -316,24 +277,5 @@ close;
 =======
 >>>>>>> 7cca53a839925e35ed72913bef3713c93883efec
 
-% --- Executes on selection change in SearchMarital.
-function SearchMarital_Callback(hObject, eventdata, handles)
-% hObject    handle to SearchMarital (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns SearchMarital contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from SearchMarital
 
 
-% --- Executes during object creation, after setting all properties.
-function SearchMarital_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to SearchMarital (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
