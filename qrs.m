@@ -1,5 +1,15 @@
 function [inds] = qrs(ecg_i, ecg_f)
-
+%%Snipbit de c?gido tomado de la p?gina oficial de Mathworks, en 
+%https://la.mathworks.com/matlabcentral/fileexchange/45840-complete-pan-tompkins-implementation-ecg-qrs-detector
+%% References : 
+%[1] Sedghamiz. H, "Matlab Implementation of Pan Tompkins ECG QRS detector.", March 2014. https://www.researchgate.net/publication/313673153_Matlab_Implementation_of_Pan_Tompkins_ECG_QRS_detect 
+%AND 
+%[2] PAN.J, TOMPKINS. W.J,"A Real-Time QRS Detection Algorithm" IEEE 
+%TRANSACTIONS ON BIOMEDICAL ENGINEERING, VOL. BME-32, NO. 3, MARCH 1985. 
+%% Author : Hooman Sedghamiz 
+% Linkoping university 
+% email : hoose792@student.liu.se 
+% Copyright march 2014 
 fs = 360;
 skip = 0;                                                                 
 m_selected_RR = 0;
