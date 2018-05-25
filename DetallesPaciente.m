@@ -54,10 +54,16 @@ function DetallesPaciente_OpeningFcn(hObject, eventdata, handles, varargin)
 movegui('center')
 % Choose default command line output for DetallesPaciente
 handles.output = hObject;
-
+global address;
 handles.datosf1 = guidata(findobj('Tag', 'mainfig'));
 handles.pacienteid = datosf1.pacienteact{1,8};
 handles.pacientetodo = specificpatient(handles.datosf1.POI,handles.datosf1.PCPT,handles.pacienteid);
+handles.url = address;
+axes(axes5)
+matlabImage = imread(strcat(handles.url,handles.pacientetodo{1,8}));
+image(matlabImage)
+axis off
+axis image;
 
 set(handles.DispBirth, 'String', myString);
 set(hObject,'HandleVisibility','on');
