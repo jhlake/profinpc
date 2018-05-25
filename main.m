@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 24-May-2018 18:31:44
+% Last Modified by GUIDE v2.5 23-May-2018 23:38:18
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -65,21 +65,15 @@ handles.ADCPT = ADCPT;
 handles.LCPT = LCPT;
 handles.PCPT = PCPT;
 handles.POI = POI;
-global searchParam;
 
-handles.pacienteact = struct('Name',[]);
 handles.newPat = struct('Name',[],'DateOfBirth',[],...
     'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[],'Photo',[],'ID',[]);
-searchParam = struct('Name',[],'DateOfBirth',[],...
-    'Gender',[],'Race',[],'Language',[],'Poverty',[],'MaritalStatus',[]);
-set(hObject,'HandleVisibility','on');
-
 
 % Update handles structure
 guidata(hObject, handles);
 
 % UIWAIT makes main wait for user response (see UIRESUME)
-% uiwait(handles.mainfig);
+% uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
@@ -98,16 +92,6 @@ function searchButton_Callback(hObject, eventdata, handles)
 % hObject    handle to searchButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-Buscar(handles);
-global searchParam;
-global done; done = false;
-while ~done
-pause(1);
-end
-disp(searchParam);
-
-
-
 
 
 % --- Executes on selection change in patientsListbox.
@@ -187,6 +171,7 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+
 function languageTextbox_Callback(hObject, eventdata, handles)
 % hObject    handle to languageTextbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -237,14 +222,7 @@ function detailsButton_Callback(hObject, eventdata, handles)
 % hObject    handle to detailsButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-index_selected = get(patientsListbox,'Value');
-list = get(patientsListbox,'String');
-nombrepaciente = list{index_selected};
-tempo = filterby(handles.POI, handles.PCPT, 'Name', nombrepaciente);
-handles.pacienteact = tempo{1,8};
-guidata(hObject, handles);
 DetallesPaciente
-
 
 
 % --- Executes on button press in resetSearchButton.
@@ -271,6 +249,16 @@ function addPatientButton_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+handles.newPat.Name = handles.nameTextbox.String;
+handles.newPat.DateOfBirth = handles.DateField.String;
+handles.newPat.Gender = handles.genderSelector.String(handles.genderSelector.Value);
+handles.newPat.Race = handles.raceSelector.String(handles.raceSelector.Value);
+handles.newPat.Language = handles.languageTextbox.String;
+handles.newPat.Poverty = handles.povertyTextbox.String;
+handles.newPat.MaritalStatus = handles.maritalStatusSelector.String(handles.maritalStatusSelector.Value);
+
+
 
 handles = AddPatient(handles);
 guidata(hObject, handles);

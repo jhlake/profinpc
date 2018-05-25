@@ -22,7 +22,7 @@ function varargout = Buscar(varargin)
 
 % Edit the above text to modify the response to help Buscar
 
-% Last Modified by GUIDE v2.5 24-May-2018 19:00:22
+% Last Modified by GUIDE v2.5 24-May-2018 19:50:55
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -54,10 +54,7 @@ function Buscar_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for Buscar
 handles.output = hObject;
-handles.otroHandles = varargin(1);
 
-
-set(hObject,'HandleVisibility','on');
 % Update handles structure
 guidata(hObject, handles);
 
@@ -73,7 +70,7 @@ function varargout = Buscar_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.otroHandles{1};
+varargout{1} = handles.output;
 
 
 
@@ -265,32 +262,72 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-global searchParam; global done;
 
-done = true;
 
-if ~strcmp(handles.edit1.String,'Edit Text')
-    searchParam.Name = handles.edit1.String;
+% --- Executes on selection change in SearchGender.
+function SearchGender_Callback(hObject, eventdata, handles)
+% hObject    handle to SearchGender (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns SearchGender contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from SearchGender
+
+
+% --- Executes during object creation, after setting all properties.
+function SearchGender_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SearchGender (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
 end
-if ~strcmp(handles.edit7.String,'Edit Text')
-    searchParam.DateOfBirth = handles.edit7.String;
-end
-if ~strcmp(handles.edit8.String,'Edit Text')
-    searchParam.Language = handles.edit8.String;
-end
-if ~strcmp(handles.edit1.String,'0')
-    searchParam.Poverty = handles.edit6.String;
-end
-% if ~strcmp(handles.edit1.String,'Edit Text')
-%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-% end
-% if ~strcmp(handles.edit1.String,'Edit Text')
-%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-% end
-% if ~strcmp(handles.edit1.String,'Edit Text')
-%     handles.otroHandles{1}.searchParam.Name = handles.edit1.String;
-% end
-
-guidata(hObject, handles);
 
 
+% --- Executes on selection change in SearchRace.
+function SearchRace_Callback(hObject, eventdata, handles)
+% hObject    handle to SearchRace (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns SearchRace contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from SearchRace
+
+
+% --- Executes during object creation, after setting all properties.
+function SearchRace_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SearchRace (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on selection change in SearchMarital.
+function SearchMarital_Callback(hObject, eventdata, handles)
+% hObject    handle to SearchMarital (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns SearchMarital contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from SearchMarital
+
+
+% --- Executes during object creation, after setting all properties.
+function SearchMarital_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SearchMarital (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
