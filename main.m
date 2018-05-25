@@ -55,7 +55,7 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for main
 movegui('center');
 handles.output = hObject;
-
+global adress;
 adress = uigetdir();
 
 [ACPT,ADCPT,LCPT,PCPT,POI ] = ReadDatabase(adress);
@@ -109,12 +109,15 @@ fields = fieldnames(searchParam);
 
 for i = 1:numel(fields)
     a = fields{i};
-    disp(eval(['searchParam.', a]));
+    res = eval(['searchParam.', a]);
 end
+
+if searchParam.Name 
 lista = {'giyehrud','gyfisu','yufer'};
 set(handles.patientsListbox,'String', lista);
 
 disp(searchParam);
+end
 
 
 
